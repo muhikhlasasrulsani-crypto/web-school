@@ -1,0 +1,604 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background: white;
+}
+/* =========================
+   HEADER
+========================= */
+header{
+    background: white;
+    padding: 20px 60px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* =========================
+   LOGO
+========================= */
+.logo{
+    font-size: 24px;
+    font-weight: bold;
+    color: #1e3a8a;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+.nav-link{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-link a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nav-link a:hover{
+    color: #4f7cff;
+}
+
+/* =========================
+   DROPDOWN
+========================= */
+.dropdown{
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.dropdown > a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.dropdown > a:hover{
+    color: #4f7cff;
+}
+
+.dropdown-content{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 220px;
+    background: rgb(255, 255, 255);
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.dropdown-content a{
+    display: block;
+    padding: 12px 18px;
+    margin: 0;
+    color: #333;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover{
+    background: #3eeb1f;
+    color: #4f7cff;
+}
+
+/* Tampilkan dropdown saat hover */
+.dropdown:hover .dropdown-content{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px){
+
+    header{
+        padding: 20px;
+    }
+
+    nav{
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-link{
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .dropdown-content{
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .dropdown:hover .dropdown-content{
+        transform: translateX(-50%);
+    }
+}
+.hero{
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.hero h1{
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: green;
+}
+.hero h2{
+    margin-bottom: 15px;
+    color: green;
+}
+.hero h3{
+    margin-bottom: 15px;
+    color: black;
+}
+.hero p{
+    font-size: 15px;
+    color: green;
+    max-width: 600px;
+}
+.visi{
+    padding: 80px 60px;
+    background: rgb(255, 255, 255);
+    text-align: center;
+    border: 2px solid #dbeafe;
+    border-radius: 20px;
+    margin: 30px 60px;
+    transition: 0.3s;
+}
+.visi:hover{
+    transform: scale(1.02);
+    box-shadow: 0 10px 25px rgba (0,0,0,0.1);
+}
+.visi h2{
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #325;
+}
+.visi p{
+    font-size: 1.2em;
+    color: #325;
+    max-width: 600px;
+    margin: auto;
+}
+.misi{
+    padding: 80px 60px;
+    background: rgb(255, 255, 255);
+    text-align: center;
+    border: 2px solid #dbeafe;
+    border-radius: 20px;
+    margin: 30px 60px;
+    transition: 0.3s;
+}
+.misi:hover{
+    transform: scale(1.02);
+    box-shadow: 0 10px 25px rgba (0,0,0,0.1);
+}
+.misi h2{
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #325;
+}
+.misi ul{
+    max-width: 800px;
+    margin: auto;
+    padding-left: 20px;
+    text-align: left;
+}
+.misi li{
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+.tujuan{
+    padding: 80px 60px;
+    background: rgb(243, 245, 243);
+    text-align: center;
+    border: 2px solid #dbeafe;
+    border-radius: 20px;
+    margin: 30px 60px;
+    transition: 0.3s;
+}
+.tujuan:hover{
+    transform: scale(1.02);
+    box-shadow: 0 10px 25px rgba (0,0,0,0.1);
+}
+.tujuan h2{
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #325;
+}
+.tujuan ul{
+    max-width: 800px;
+    margin: auto;
+    padding-left: 20px;
+    text-align: left;
+}
+.tujuan li{
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+.contact-hero{
+    min-height: 40vh;
+    background: linear-gradient(to right, #dbeafe, #70e166);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+.contact-hero h1{
+    font-size: 3rem;
+    color: #1d4ed8;
+    margin-bottom: 15px;
+}      
+.contact-hero p{
+    color: #4b5563;
+    font-size: 1.1rem;
+}
+.contact{
+    padding: 80px 60px;
+    display: flex;
+    gap: 40px;
+}
+
+.contact-info{
+    flex: 1;
+}
+
+.contact-info iframe{
+    width: 100%;
+    height: 400px;
+    border: none;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+
+.info-box{
+    background: white;
+    padding: 20px;
+    border: 2px solid #dbeafe;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+
+.info-box:hover{
+    transform: scale(1.02);
+}
+
+.contact-form{
+    flex: 1;
+    background: white;
+    padding: 30px;
+    border: 2px solid #dbeafe;
+    border-radius: 20px;
+}
+
+.contact-form h2{
+    text-align: center;
+    color: #1d4ed8;
+    margin-bottom: 25px;
+}
+
+.contact-form form{
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label{
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea{
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+}
+
+.contact-form button{
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.programs-hero{
+    padding: 80px 60px;
+    background: rgb(83, 228, 73);
+    text-align: center;
+    border: 2px solid #dbeafe;
+    border-radius: 20px;
+    margin: 30px 60px;
+    transition: 0.3s;
+}
+
+.programs:hover{
+    transform: scale(1.02);
+    box-shadow: 0 10px 25px rgba (0,0,0,0.1);
+}
+
+.programs h1{
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #325;
+    text-align: left;
+
+.programs h2{
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    color: #325;}
+    text-align: left;
+}
+
+.programs ul{
+    max-width: 800px;
+    text-align: left;
+    margin: auto;
+    padding-left: 20px;
+}
+
+.programs li{
+    margin-bottom: 15px;
+    text-align: left;
+    line-height: 1.8;
+}
+
+.facilities-hero{
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(
+        rgba(30,58,138,0.7),
+        rgba(30,58,138,0.7)
+    ),
+    url("https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1600");
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.facilities-hero h1{
+    font-size: 4rem;
+    margin-bottom: 15px;
+}
+
+.facilities-hero p{
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: auto;
+}
+
+/* =========================
+       STATS
+========================= */
+.stats{
+    padding: 80px 60px;
+    background: #f8faff;
+}
+
+.stats-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    gap: 25px;
+}
+
+.stat-card{
+    background: white;
+    padding: 35px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: .3s;
+}
+
+.stat-card:hover{
+    transform: translateY(-10px);
+}
+
+.stat-card h2{
+    color: #1e3a8a;
+    font-size: 2.5rem;
+}
+
+/* =========================
+    FACILITIES
+========================= */
+.facilities{
+    padding: 100px 60px;
+}
+
+.section-title{
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title h2{
+    font-size: 2.5rem;
+    color: #1e3a8a;
+    margin-bottom: 15px;
+}
+
+.facility-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+    gap: 30px;
+}
+
+.facility-card{
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    transition: .4s;
+}
+
+.facility-card:hover{
+    transform: translateY(-10px);
+}
+
+.facility-card img{
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: .4s;
+}
+
+.facility-card:hover img{
+    transform: scale(1.08);
+}
+
+.facility-content{
+    padding: 25px;
+}
+
+.facility-content h3{
+    color: #1e3a8a;
+    margin-bottom: 10px;
+}
+
+.facility-content p{
+    color: #666;
+    line-height: 1.7;
+}
+
+/* =========================
+    LEARNING ENVIRONMENT
+========================= */
+.learning{
+    padding: 100px 60px;
+    background: #f8faff;
+}
+
+.learning-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
+    gap: 30px;
+}
+
+.learning-card{
+    background: white;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.learning-card h3{
+    color: #1e3a8a;
+    margin-bottom: 15px;
+}
+
+/* =========================
+   GALLERY
+========================= */
+.gallery{
+    padding: 100px 60px;
+}
+
+.gallery-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 20px;
+}
+
+.gallery-grid img{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: .4s;
+}
+
+.gallery-grid img:hover{
+    transform: scale(1.05);
+}
+
+/* =========================
+   CTA
+========================= */
+.cta{
+    background: #1e3a8a;
+    color: white;
+    text-align: center;
+    padding: 100px 30px;
+}
+
+.cta h2{
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.cta p{
+    max-width: 700px;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+.cta a{
+    text-decoration: none;
+    color: #1e3a8a;
+    background: white;
+    padding: 14px 30px;
+    border-radius: 50px;
+    font-weight: bold;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer{
+    background: #111827;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+@media(max-width:768px){
+
+    .facilities-hero h1{
+        font-size: 2.5rem;
+    }
+
+    .stats,
+    .facilities,
+    .learning,
+    .gallery{
+        padding: 60px 20px;
+    }
+}
